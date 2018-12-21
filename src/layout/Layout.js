@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styled, {createGlobalStyle, ThemeProvider} from 'styled-components';
-
+import MagicGrid from "magic-grid"
 import { theme } from './../utils/theme';
 
 const GlobalStyle = createGlobalStyle`
