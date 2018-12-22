@@ -3,7 +3,7 @@ import styled  from 'styled-components';
 
 
 const Card = styled.div`
-    width:420px;
+    width:320px;
     height:400px;
     background:${({theme}) => theme.colors.lightOne};
     overflow:hidden;

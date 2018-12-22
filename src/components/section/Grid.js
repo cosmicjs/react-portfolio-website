@@ -22,9 +22,9 @@ justify-items: center;
 export default function Grid(props) {
 
   return (
-   <GridContainer column = {false}>
+   <GridContainer column = {true}>
        {props.images && props.images.objects.map((item, index) => {
-         console.log("work");
+
         return(
           <>
           <Card key={index}><Img src={item.metadata.img.url} alt="img"/> <Anchor><i class="fa fa-link" aria-hidden="true"></i></Anchor></Card>
