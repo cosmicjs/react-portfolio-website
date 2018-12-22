@@ -1,7 +1,8 @@
 export const colors = {
 
-    dark: 'black',
-    light: 'white',
-    primary: 'red',
-    second: 'brown'
+    dark: '#1B1B1E',
+    darkOne: '#373F51',
+    middle: '#373F51',
+    light: '#D8DBE2',
+    lightOne: '#A9BCD0'
 }

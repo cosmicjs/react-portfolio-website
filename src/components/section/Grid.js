@@ -1,23 +1,38 @@
 import React from 'react'
 
 import styled from 'styled-components';
+import Card from '../parts/Card';
+import Img from '../parts/Figure';
+import Anchor from './../parts/Anchor';
 
 
 const GridContainer = styled.div`
-max-width: 1280px;
-height: 400px;
-background-color: antiquewhite;
-display: flex;
-justify-content: center;
-align-items: center;
+max-width:1300px;
+height: 100%;
+// background-color: ${({theme}) => theme.colors.lightOne};  
+color: ${({theme}) => theme.colors.dark};
+display: grid;
 margin:0 auto;
-
+grid-gap:5px;
+grid-template-columns: ${(props) => props.column ? 'repeat(auto-fit, minmax(320px, 1fr))' :' repeat(auto-fit, minmax(420px,1fr))' }; 
+grid-template-rows:auto;
+justify-items: center;
 `;
 
-export default function Grid() {
-  return (
-   <GridContainer>
+export default function Grid(props) {
 
+  return (
+   <GridContainer column = {true}>
+       {props.images && props.images.objects.map((item, index) => {
+
+        return(
+          <>
+          <Card key={index}><Img src={item.metadata.img.url} alt="img"/> <Anchor><i class="fa fa-link" aria-hidden="true"></i></Anchor></Card>
+        
+          </>
+        )
+       })}
+      
    </GridContainer>
   )
 }
