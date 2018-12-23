@@ -24,7 +24,7 @@ export default function Grid(props) {
 
   return (
    <GridContainer column = {true}>
-       {props.images && props.images.objects.map((item, index) => {
+       {props.images && props.images.map((item, index) => {
 
         return(
           <div key={index}>
