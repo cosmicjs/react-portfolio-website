@@ -17,6 +17,7 @@ grid-gap:5px;
 grid-template-columns: ${(props) => props.column ? 'repeat(auto-fit, minmax(320px, 1fr))' :' repeat(auto-fit, minmax(420px,1fr))' }; 
 grid-template-rows:auto;
 justify-items: center;
+
 `;
 
 export default function Grid(props) {
@@ -26,10 +27,14 @@ export default function Grid(props) {
        {props.images && props.images.objects.map((item, index) => {
 
         return(
-          <>
-          <Card key={index}><Img src={item.metadata.img.url} alt="img"/> <Anchor><i class="fa fa-link" aria-hidden="true"></i></Anchor></Card>
-        
-          </>
+          <div key={index}>
+          <Card>
+            <Img src={item.metadata.img.url} alt="img"/>
+            <Anchor>
+              <i className="fa fa-link" aria-hidden="true"></i>
+            </Anchor>
+            </Card>
+          </div>
         )
        })}
       

@@ -1,7 +1,6 @@
 //PACKAGE IMPORT
 import React, { Component } from 'react';
 
-
 // COMPONENT IMPORTS
 
 
@@ -12,9 +11,6 @@ import Button from './components/buttons/Button';
 import Grid from './components/section/Grid';
 import Wrap from './components/section/Wrap';
 import H1 from './components/headers/H1';
-
-
-
 
 
 class App extends Component {
@@ -37,14 +33,16 @@ this.setState({
 
 console.log(data);
   }
+  
+    
 
   render() {
     return (
+     
     <div className="App">
     <Layout>
       <Wrap>
-      <H1 isBig={true}>Hello</H1>
-      <Button>Find out more</Button>
+      <H1 isBig={true}>Sublim</H1>
       </Wrap>
       <Grid  images={this.state.images}/>
     </Layout>
