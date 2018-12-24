@@ -54,7 +54,7 @@ class App extends Component {
       <Wrap>
       <H1 isBig={true}>Sublim</H1>
       </Wrap>
-      <Category></Category>
+      <Category category={this.state.category}/>
       {/* <Grid  images={this.state.images}/> */}
     </Layout>
      </div>

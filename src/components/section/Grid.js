@@ -19,7 +19,6 @@ grid-template-rows:auto;
 justify-items: center;
 
 `;
-
 export default function Grid(props) {
 
   return (
