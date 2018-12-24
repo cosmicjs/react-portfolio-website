@@ -11,12 +11,14 @@ import Button from './components/buttons/Button';
 import Grid from './components/section/Grid';
 import Wrap from './components/section/Wrap';
 import H1 from './components/headers/H1';
+import Category from './components/section/Category';
 
 
 class App extends Component {
 
   state = {
-    images: null
+    images: null,
+    categories: null
   }
   componentDidMount = async () => {
     const Cosmic = require('cosmicjs');
@@ -24,17 +26,25 @@ class App extends Component {
     const bucket = api.bucket({
     slug: 'ec055990-f24c-11e8-9231-9b47e8f95b7e'
     })
-    const data = await bucket.getObjects({
-      type: 'images'
-})
-this.setState({
-  images:data
-})
-
-console.log(data);
-  }
+    const data = await bucket.getObjects();
+    const cat = data.objects.filter((item) => {
+      return(
+        item.type_slug === "categories"
+      )
+    });
+    const img = data.objects.filter((item) => {
+      return(
+        item.type_slug === "images"
+      )
+    });
+    this.setState({
+      images:img,
+      category: cat
+    })
+    console.log((this.state.images), (this.state.category));
+}
+      
   
-    
 
   render() {
     return (
@@ -44,7 +54,8 @@ console.log(data);
       <Wrap>
       <H1 isBig={true}>Sublim</H1>
       </Wrap>
-      <Grid  images={this.state.images}/>
+      <Category category={this.state.category}/>
+      {/* <Grid  images={this.state.images}/> */}
     </Layout>
      </div>
     );
