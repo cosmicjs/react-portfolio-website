@@ -1,44 +1,26 @@
 import React from 'react'
 import styled from 'styled-components';
-// import CategoryCard from './../parts/CategoryCard';
+import CategoryCard from './../parts/CategoryCard';
 import H1 from './../headers/H1';
-// import CaptionWrap from '../parts/Caption';
+import CaptionWrap from '../parts/Caption';
 
 const ContainerCategory = styled.div`
     max-width:1300px;
     height:100%;
     // background: ${({theme}) => theme.colors.lightOne};
-    background:blue;
+ 
     margin:0 auto;
     
 `;
-const CategoryCard = styled.div`
-  display:grid;
-  grid-template-columns:900px 400px;
-  grid-template-rows:600px;
-  width:100%;
-  img{
-    height:600px;
-    width:100%;
-    background:yellow;
-  }
-`;
-
-const CaptionWrap = styled.div`
-        background: ${({theme}) => theme.colors.light};
-        width:100%;
-        height:100%;
-        position:relative;
-`;
 const Position = styled.div`
        background:${({theme}) => theme.colors.lightOne};
-        position:absolute;
-        top:60px;
-        left:-150px;
+       transform: ${(props) => props.index % 2 === 0 ? 'translateX(-150px)' : 'translateX(150px)'}; 
         height:480px;
         width:550px;
         box-sizing:border-box;
         padding:50px;
+        box-shadow: 11px 11px 14px 0 rgba(0, 0, 0, .15);
+      
 `;
 
 export default function Category(props) {
@@ -47,10 +29,10 @@ export default function Category(props) {
 <ContainerCategory>
 {props.category && props.category.map((item, index) => {
   return(
-    <CategoryCard key={index}>
-      <img src={item.metadata.img.url} alt="img"/>
-        <CaptionWrap>   
-         <Position>
+    <CategoryCard key={index} index={index}>
+      <img src={item.metadata.img.url} alt="img" index={index} />
+        <CaptionWrap index={index}>   
+         <Position index={index}>
             <H1 isBig>{item.title}</H1>
             <p>{item.content}</p>
          </Position>
