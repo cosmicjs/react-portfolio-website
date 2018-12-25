@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 const CategoryCard = styled.div`
   display:grid;
-  grid-template-columns:${(props) => props.index % 2 === 0 ? '700px 600px' : '600px 700px'};
+  grid-template-columns:${(props) => props.index % 2 === 0 ? '850px 450px' : '450px 850px'};
   grid-template-rows:600px;
   width:100%;
   padding:10px 0;
+
   img{
     height:600px;
     width:100%;
