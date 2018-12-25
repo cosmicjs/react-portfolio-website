@@ -27,7 +27,7 @@ const Position = styled.div`
 `;
 
 export default function Category(props) {
-    console.log(props.category);
+  
   return (
 <ContainerCategory>
 {props.category && props.category.map((item, index) => {

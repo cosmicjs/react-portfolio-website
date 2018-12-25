@@ -18,7 +18,7 @@ class App extends Component {
 
   state = {
     images: null,
-    categories: null
+    categories: null,
   }
   componentDidMount = async () => {
     const Cosmic = require('cosmicjs');
@@ -43,7 +43,9 @@ class App extends Component {
     })
     console.log((this.state.images), (this.state.category));
 }
-      
+  // handleMenu = () => {
+  //   this.setState((prevProps) => ({visable: !prevProps.visable }));
+  // }    
   
 
   render() {
