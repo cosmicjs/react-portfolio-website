@@ -12,7 +12,7 @@ import Grid from './components/section/Grid';
 import Wrap from './components/section/Wrap';
 import H1 from './components/headers/H1';
 import Category from './components/section/Category';
-
+import Nav from './components/section/Nav';
 
 class App extends Component {
 
@@ -53,6 +53,7 @@ class App extends Component {
     <Layout>
       <Wrap>
       <H1 isBig={true}>Sublim</H1>
+      <Nav />
       </Wrap>
       <Category category={this.state.category}/>
       {/* <Grid  images={this.state.images}/> */}
