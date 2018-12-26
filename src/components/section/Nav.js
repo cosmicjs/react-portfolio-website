@@ -20,7 +20,6 @@ font-size: .5px;
 display: block;
 background:black;
  transform:${({val}) => val ? 'rotate(-45deg) translate(-5px, 3px)' : 'rotate(-0deg) translate(-0px, 0px)'}; 
-
 `;
 const Bar2 = styled.div`
 width: 30px;
@@ -32,7 +31,6 @@ border-radius: 0px;
 font-size: .5px;
 display: block;
 opacity:${({val}) => val ? '0' : '1'};
- 
 `;
 const Bar3 = styled.div`
 width: 30px;
@@ -45,12 +43,11 @@ font-size: .5px;
 display: block;
 transform:${({val}) => val ? 'rotate(45deg) translate(-10px, -8px)' : 'rotate(-0deg) translate(-0px, 0px)'}; 
 `;
-
 const pOverlay = posed.div({
     true: {
-       x: 0,
+       x: '50%',
        opacity:1,
-       transition: { duration: 800 },
+       transition: { duration: 600 },
     },
     false: {
        x:'150%',
@@ -58,7 +55,17 @@ const pOverlay = posed.div({
     },
 });
 
-
+const pOverlay2 = posed.ul({
+    true: {
+       x: 0,
+       opacity:1,
+       transition: { duration: 1200 },
+    },
+    false: {
+       x:'150%',
+       opacity:0,
+    },
+});
 const Overlay = styled(pOverlay)`
     position:fixed;
     top:0;
@@ -69,13 +76,13 @@ const Overlay = styled(pOverlay)`
     background:${({theme}) => theme.colors.light}
     // display:${({val}) => val ? 'block' : 'none'};
 `;
-const ListMenu = styled.ul`
+const ListMenu = styled(pOverlay2)`
     display:flex;
     justify-content:center;
-    align-items:center;
+  
     flex-direction:column;
     list-style-type:none;
-    margin:5% 0;
+    margin: 4%;
     li{
         font-size:4em;
         font-weight:${({theme}) => theme.fontWg.fat};
@@ -91,7 +98,7 @@ function Nav(props) {
   return (
     <Menu onClick={props.handleMenu}>
     <Overlay pose={props.val ? 'true': 'false'}>
-        <ListMenu>
+        <ListMenu  pose={props.val ? 'true': 'false'}>
             <li>Home</li>
             <li>Help</li>
             <li>Portfolio</li>
@@ -104,30 +111,7 @@ function Nav(props) {
     </Menu>
   )
 }
-
-
 export default Nav;
-
-
-// export default class Nav extends Component {
-//     state ={
-//         visable: false
-//     }
-//     handleMenu = () => {
-//         this.setState((prevState) => ({visable: !prevState.visable }));
-//         console.log(this.state.visable);
-//       }    
-      
-//   render() {
-//     return (
-//             <Menu onClick={this.handleMenu}>
-//             <Bar1 val={this.state.visable}></Bar1>
-//             <Bar2 val={this.state.visable}></Bar2>
-//             <Bar3 val={this.state.visable}></Bar3>
-//             </Menu>
-//           )
-//   }
-// }
 
 
 

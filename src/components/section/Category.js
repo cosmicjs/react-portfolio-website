@@ -8,10 +8,7 @@ import Button from './../buttons/Button';
 const ContainerCategory = styled.div`
     max-width:1300px;
     height:100%;
-    // background: ${({theme}) => theme.colors.lightOne};
-    margin:0 auto;
- 
-    
+    margin:0 auto;    
 `;
 const Position = styled.div`
        background:${({theme}) => theme.colors.light};
@@ -20,15 +17,23 @@ const Position = styled.div`
         left:${(props) => props.index % 2 === 0 ? '-100px' : '100px'};
         width:500px;
         box-sizing:border-box;
-        padding:50px;
-        position:absolute;
+        padding:0 50px;
+        position:relative;
         box-shadow: ${(props) => props.index % 2 === 0 ? ' -9px 11px 14px 0 rgba(0, 0, 0, .15)' : ' 11px 11px 14px 0 rgba(0, 0, 0, .15)'}; 
-      
+        ::before{
+          content:'';
+          height:100px;
+          position:absolute;
+          width:100px;
+          top:0;
+          right:${(props) => props.index % 2 === 0 ? '0' : '350px'}; 
+          border-right:${(props) => props.index % 2 === 0 ? '1px solid black;' : 'none'}; 
+          border-left:${(props) => props.index % 2 !== 0 ? '1px solid black;' : 'none'}; 
+          border-top:1px solid black;
+        }  
 `;
-
 export default function Category(props) {
-  
-  return (
+return (
 <ContainerCategory>
 {props.category && props.category.map((item, index) => {
   return(
@@ -42,9 +47,8 @@ export default function Category(props) {
          </Position>
         </CaptionWrap>
       </CategoryCard>
-    
-  )
-})}
+      )
+    })}
     </ContainerCategory>
   )
 }

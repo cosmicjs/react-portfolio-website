@@ -54,7 +54,7 @@ class App extends Component {
     <div className="App">
     <Layout>
       <Wrap>
-      <H1 isBig={true}>Sublim</H1>
+      <H1 isBig={true}>John Doe</H1>
       <Nav handleMenu={this.handleMenu}  val={this.state.visable}/>
       </Wrap>
       <Category category={this.state.category}/>
