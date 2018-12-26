@@ -43,9 +43,9 @@ class App extends Component {
     })
     console.log((this.state.images), (this.state.category));
 }
-  // handleMenu = () => {
-  //   this.setState((prevProps) => ({visable: !prevProps.visable }));
-  // }    
+  handleMenu = () => {
+    this.setState((prevProps) => ({visable: !prevProps.visable }));
+  }    
   
 
   render() {
@@ -54,8 +54,8 @@ class App extends Component {
     <div className="App">
     <Layout>
       <Wrap>
-      <H1 isBig={true}>Sublim</H1>
-      <Nav />
+      <H1 isBig={true}>John Doe</H1>
+      <Nav handleMenu={this.handleMenu}  val={this.state.visable}/>
       </Wrap>
       <Category category={this.state.category}/>
       {/* <Grid  images={this.state.images}/> */}
