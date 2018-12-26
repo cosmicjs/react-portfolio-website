@@ -75,8 +75,15 @@ const ListMenu = styled.ul`
     align-items:center;
     flex-direction:column;
     list-style-type:none;
+    margin:5% 0;
     li{
         font-size:4em;
+        font-weight:${({theme}) => theme.fontWg.fat};
+        transition: all 1s ease;
+    :hover{
+        color:${({theme}) => theme.colors.lightOne}
+        transform: translateX(5px);
+    }
     }
 `;
 function Nav(props) {
