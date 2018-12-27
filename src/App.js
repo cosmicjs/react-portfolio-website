@@ -1,6 +1,6 @@
 //PACKAGE IMPORT
 import React, { Component } from 'react';
-
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 // COMPONENT IMPORTS
 
 
@@ -13,6 +13,7 @@ import Wrap from './components/section/Wrap';
 import H1 from './components/headers/H1';
 import Category from './components/section/Category';
 import Nav from './components/section/Nav';
+
 
 class App extends Component {
 
@@ -57,8 +58,16 @@ class App extends Component {
       <H1 isBig={true}>John Doe</H1>
       <Nav handleMenu={this.handleMenu}  val={this.state.visable}/>
       </Wrap>
-      <Category category={this.state.category}/>
-      {/* <Grid  images={this.state.images}/> */}
+     <BrowserRouter>
+      <Switch>
+        <Route path="/" exact
+         render={(props) => <Category {...props} category={this.state.category}/>}
+        />
+        <Route path="/portfolio"  exact
+         render={(props) => <Grid {...props} images={this.state.images}/>} 
+         />
+      </Switch>
+     </BrowserRouter>
     </Layout>
      </div>
     );

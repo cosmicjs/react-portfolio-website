@@ -20,7 +20,7 @@ justify-items: center;
 
 `;
 export default function Grid(props) {
-
+  
   return (
    <GridContainer column = {true}>
        {props.images && props.images.map((item, index) => {
