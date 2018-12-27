@@ -33,14 +33,15 @@ const Position = styled.div`
         }  
 `;
 export default function Category(props) {
+  console.log("Props category", props);
 return (
 <ContainerCategory>
 {props.category && props.category.map((item, index) => {
   return(
-    <CategoryCard key={index} index={index}>
-      <img src={item.metadata.img.url} alt="img" index={index} />
-        <CaptionWrap index={index}>   
-         <Position index={index}>
+    <CategoryCard key={index} index={index + 1}>
+      <img src={item.metadata.img.url} alt="img" index={index + 1} />
+        <CaptionWrap index={index + 1}>   
+         <Position index={index + 1}>
             <H1 isBig>{item.title}</H1>
             <p>{item.content}</p>
             <Button>See more</Button>
