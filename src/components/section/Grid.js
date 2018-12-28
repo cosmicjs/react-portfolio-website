@@ -5,7 +5,6 @@ import Card from '../parts/Card';
 import Img from '../parts/Figure';
 import Anchor from './../parts/Anchor';
 
-
 const GridContainer = styled.div`
 max-width:1300px;
 height: 100%;
@@ -17,7 +16,6 @@ grid-gap:5px;
 grid-template-columns: ${(props) => props.column ? 'repeat(auto-fit, minmax(320px, 1fr))' :' repeat(auto-fit, minmax(420px,1fr))' }; 
 grid-template-rows:auto;
 justify-items: center;
-
 `;
 export default function Grid(props) {
   
