@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from 'styled-components';
 import posed from 'react-pose';
 
@@ -45,7 +45,7 @@ transform:${({val}) => val ? 'rotate(45deg) translate(-10px, -8px)' : 'rotate(-0
 `;
 const pOverlay = posed.div({
     true: {
-       x: '50%',
+       x: '0%',
        opacity:1,
        transition: { duration: 600 },
     },
@@ -91,31 +91,54 @@ const ListMenu = styled(pOverlay2)`
         color:${({theme}) => theme.colors.lightOne}
         transform: translateX(5px);
     }
-    }
-`;
-function Nav(props) {
-    console.log(props.val);
-  return (
-    <Menu onClick={props.handleMenu}>
-    <Overlay pose={props.val ? 'true': 'false'}>
-        <ListMenu  pose={props.val ? 'true': 'false'}>
-            <li>Home</li>
-            <li>Help</li>
-            <li>Portfolio</li>
-            <li>Contact</li>
-        </ListMenu>
-    </Overlay>
-    <Bar1 val={props.val}></Bar1>
-    <Bar2 val={props.val}></Bar2>
-    <Bar3 val={props.val}></Bar3>
-    </Menu>
-  )
 }
-export default Nav;
+`;
+// function Nav(props) {
+//     console.log(props.val);
+//   return (
+//     <Menu onClick={props.handleMenu}>
+//     <Overlay pose={props.val ? 'true': 'false'}>
+//         <ListMenu  pose={props.val ? 'true': 'false'}>
+//             <li>Home</li>
+//             <li>Help</li>
+//             <li>Portfolio</li>
+//             <li>Contact</li>
+//         </ListMenu>
+//     </Overlay>
+//     <Bar1 val={props.val}></Bar1>
+//     <Bar2 val={props.val}></Bar2>
+//     <Bar3 val={props.val}></Bar3>
+//     </Menu>
+//   )
+// }
+class Nav extends Component {
+    state={
+        visable: false
+    }
+    handleMenu = () => {
+        this.setState((prevState) => ({visable: !prevState.visable }));
+      }    
+      
+  render() {
+    return (
+        <Menu onClick={this.handleMenu}>
+        <Overlay pose={this.state.visable ? 'true': 'false'}>
+            <ListMenu  pose={this.state.visable ? 'true': 'false'}>
+                <li>Home</li>
+                <li>Help</li>
+                <li>Portfolio</li>
+                <li>Contact</li>
+            </ListMenu>
+        </Overlay>
+        <Bar1 val={this.state.visable}></Bar1>
+        <Bar2 val={this.state.visable}></Bar2>
+        <Bar3 val={this.state.visable}></Bar3>
+        </Menu>
+      )
+  }
+}
 
-
-
-
+ export default Nav;
 
 
 

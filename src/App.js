@@ -10,9 +10,9 @@ import Layout from './layout/Layout';
 import Button from './components/buttons/Button';
 import Grid from './components/section/Grid';
 import Wrap from './components/section/Wrap';
-import H1 from './components/headers/H1';
+
 import Category from './components/section/Category';
-import Nav from './components/section/Nav';
+
 
 
 class App extends Component {
@@ -20,6 +20,7 @@ class App extends Component {
   state = {
     images: null,
     categories: null,
+    hg:false
   }
   componentDidMount = async () => {
     const Cosmic = require('cosmicjs');
@@ -42,28 +43,39 @@ class App extends Component {
       images:img,
       category: cat
     })
-    console.log((this.state.images), (this.state.category));
+    document.addEventListener('scroll', () => {
+      if(window.pageYOffset > 50 ) {
+        
+        console.log("work", window.pageYOffset);
+        this.setState({
+          hg: true
+        })
+        
+        }
+        else{
+          this.setState({
+            hg: false
+          })
+          
+        }
+    });
+   
 }
   handleMenu = () => {
     this.setState((prevProps) => ({visable: !prevProps.visable }));
   }    
-  
-
   render() {
     return (
      
     <div className="App">
     <Layout>
-      <Wrap>
-      <H1 isBig={true}>John Doe</H1>
-      <Nav handleMenu={this.handleMenu}  val={this.state.visable}/>
-      </Wrap>
+      <Wrap hg={this.state.hg} />
      <BrowserRouter>
       <Switch>
         <Route path="/" exact
-         render={(props) => <Category {...props} category={this.state.category}/>}
+         render={(props) => <Category category={this.state.category}/>}
         />
-        <Route path="/portfolio"  exact
+        <Route path="/grid"
          render={(props) => <Grid {...props} images={this.state.images}/>} 
          />
       </Switch>
