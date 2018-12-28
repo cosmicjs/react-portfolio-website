@@ -12,7 +12,7 @@ height: 100%;
 // background-color: ${({theme}) => theme.colors.lightOne};  
 color: ${({theme}) => theme.colors.dark};
 display: grid;
-margin:0 auto;
+margin:200px auto;
 grid-gap:5px;
 grid-template-columns: ${(props) => props.column ? 'repeat(auto-fit, minmax(320px, 1fr))' :' repeat(auto-fit, minmax(420px,1fr))' }; 
 grid-template-rows:auto;
@@ -24,7 +24,6 @@ export default function Grid(props) {
   return (
    <GridContainer column = {true}>
        {props.images && props.images.map((item, index) => {
-
         return(
           <div key={index}>
           <Card>

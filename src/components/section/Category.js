@@ -1,14 +1,13 @@
 import React from 'react'
 import styled from 'styled-components';
 import CategoryCard from './../parts/CategoryCard';
-import H1 from './../headers/H1';
 import CaptionWrap from '../parts/Caption';
 import Button from './../buttons/Button';
-
+import H1 from '../headers/H1';
 const ContainerCategory = styled.div`
     max-width:1300px;
     height:100%;
-    margin:0 auto;    
+    margin:150px auto;    
 `;
 const Position = styled.div`
        background:${({theme}) => theme.colors.light};
@@ -32,6 +31,7 @@ const Position = styled.div`
           border-top:1px solid black;
         }  
 `;
+
 export default function Category(props) {
   console.log("Props category", props);
 return (
