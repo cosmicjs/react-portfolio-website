@@ -18,21 +18,13 @@ grid-template-columns: ${(props) => props.column ? 'repeat(auto-fit, minmax(320p
 grid-template-rows:auto;
 justify-items: center;
 `;
-
-const PartCard = styled.div`
-    width:300px;
-    height:400px;
-    background:yellow;
-`;
 export default class PartGrid extends Component {
-    
     state ={
         picture: []
     }
     componentDidMount = async() => {
-        console.log(this.props);
         const slug = this.props.match.params.slug;
-        console.log(slug);
+
         const Cosmic = require('cosmicjs')
         const api = Cosmic()
         const bucket = api.bucket({
@@ -45,21 +37,19 @@ export default class PartGrid extends Component {
             picture:data.object
         })
     }
-
-
   render() {
-    this.state.picture && console.log("Data images", this.state.picture.metadata);
     return (
-
-        <GridContainer>
+        <GridContainer column={true}>
         { this.state.picture.metadata && this.state.picture.metadata.images.map((item, index) => {
         return(
           <Card key={index}>
             <Img src={item.metadata.img.url} alt=""/>
+            <Anchor>
+            <i className="fa fa-link" aria-hidden="true"></i>
+            </Anchor>
           </Card>
         )
-       })}
-            
+       })}    
         </GridContainer>
     )
   }

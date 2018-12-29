@@ -45,7 +45,7 @@ return (
          <Position index={index + 1}>
             <H1 isBig>{item.title}</H1>
             <p>{item.content}</p>
-            <Link to={'/grid/' + item.slug}><Button  >See more</Button> </Link>
+            <Link to={'/' + item.slug}><Button  >See more</Button> </Link>
             
          </Position>
         </CaptionWrap>

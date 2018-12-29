@@ -51,7 +51,6 @@ const Name = styled.div`
   }
 
 `;
-
 export default function Wrap(props) {
   console.log("props",props);
   return (
@@ -61,7 +60,7 @@ export default function Wrap(props) {
       <Nav  />
       </span>
     <Name hg={props.hg}> Photograph</Name>
-    <i class="fa fa-angle-down fa-4x" aria-hidden="true"></i>
+    <i className="fa fa-angle-down fa-4x" aria-hidden="true"></i>
    </Wraps>
   )
 }

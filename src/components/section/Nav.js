@@ -79,7 +79,7 @@ const Overlay = styled(pOverlay)`
 const ListMenu = styled(pOverlay2)`
     display:flex;
     justify-content:center;
-  
+    align-items:center;
     flex-direction:column;
     list-style-type:none;
     margin: 4%;
