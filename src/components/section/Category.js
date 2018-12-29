@@ -4,6 +4,7 @@ import CategoryCard from './../parts/CategoryCard';
 import CaptionWrap from '../parts/Caption';
 import Button from './../buttons/Button';
 import H1 from '../headers/H1';
+import { Link } from 'react-router-dom'
 const ContainerCategory = styled.div`
     max-width:1300px;
     height:100%;
@@ -44,7 +45,7 @@ return (
          <Position index={index + 1}>
             <H1 isBig>{item.title}</H1>
             <p>{item.content}</p>
-            <Button>See more</Button>
+            <Link to={'/' + item.slug}><Button  >See more</Button> </Link>
          </Position>
         </CaptionWrap>
       </CategoryCard>

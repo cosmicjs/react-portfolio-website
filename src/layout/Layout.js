@@ -5,7 +5,8 @@ import { theme } from './../utils/theme';
 
 const GlobalStyle = createGlobalStyle`
  body {
-   padding: 0;
+   padding: 0 15px;
+   box-sizing:border-box;
    margin 0;
    background:${({theme}) => theme.colors.light}
    font-family: Montserrat,'Segoe UI', sans-serif ;

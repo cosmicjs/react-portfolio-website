@@ -23,12 +23,7 @@ const Wraps = styled.div`
   }
   i{
     display:flex
-    justify-content:center;
-    // position:absolute;
-    // bottom:5%;
-    // left:0;
-    // right:0;
-    
+    justify-content:center;   
   }
 `;
 const Name = styled.div`
@@ -47,11 +42,8 @@ const Name = styled.div`
     font-family:FontAwesome;
     height:70px;
     color:gray;
-    
   }
-
 `;
-
 export default function Wrap(props) {
   console.log("props",props);
   return (
@@ -60,8 +52,8 @@ export default function Wrap(props) {
       <H2>JohnDoe</H2>
       <Nav  />
       </span>
-    <Name hg={props.hg}> Photograph</Name>
-    <i class="fa fa-angle-down fa-4x" aria-hidden="true"></i>
+    {/* <Name hg={props.hg}> Photograph</Name>
+    <i className="fa fa-angle-down fa-4x" aria-hidden="true"></i> */}
    </Wraps>
   )
 }

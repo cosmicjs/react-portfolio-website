@@ -79,7 +79,7 @@ const Overlay = styled(pOverlay)`
 const ListMenu = styled(pOverlay2)`
     display:flex;
     justify-content:center;
-  
+    align-items:center;
     flex-direction:column;
     list-style-type:none;
     margin: 4%;
@@ -93,24 +93,6 @@ const ListMenu = styled(pOverlay2)`
     }
 }
 `;
-// function Nav(props) {
-//     console.log(props.val);
-//   return (
-//     <Menu onClick={props.handleMenu}>
-//     <Overlay pose={props.val ? 'true': 'false'}>
-//         <ListMenu  pose={props.val ? 'true': 'false'}>
-//             <li>Home</li>
-//             <li>Help</li>
-//             <li>Portfolio</li>
-//             <li>Contact</li>
-//         </ListMenu>
-//     </Overlay>
-//     <Bar1 val={props.val}></Bar1>
-//     <Bar2 val={props.val}></Bar2>
-//     <Bar3 val={props.val}></Bar3>
-//     </Menu>
-//   )
-// }
 class Nav extends Component {
     state={
         visable: false
