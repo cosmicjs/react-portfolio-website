@@ -46,7 +46,6 @@ return (
             <H1 isBig>{item.title}</H1>
             <p>{item.content}</p>
             <Link to={'/' + item.slug}><Button  >See more</Button> </Link>
-            
          </Position>
         </CaptionWrap>
       </CategoryCard>

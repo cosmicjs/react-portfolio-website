@@ -7,16 +7,27 @@ import Anchor from './../parts/Anchor';
 
 
 const GridContainer = styled.div`
-max-width:1300px;
-height: 2000px;
- //background-color: ${({theme}) => theme.colors.lightOne};  
-color: ${({theme}) => theme.colors.dark};
-display: grid;
-margin:200px auto;
-grid-gap:5px;
-grid-template-columns: ${(props) => props.column ? 'repeat(auto-fit, minmax(320px, 1fr))' :' repeat(auto-fit, minmax(420px,1fr))' }; 
-grid-template-rows:auto;
-justify-items: center;
+    min-height:100%;
+    display:grid;
+    margin:150px auto;
+    justify-items:center;
+    grid-template-column:1fr;
+    grid-template-rows:400px;
+    grid-gap:10px;
+${({theme}) => theme.media.mobile} {
+   grid-template-columns:320px 320px;
+   width:640px;
+}
+${({theme}) => theme.media.tablet} {
+    grid-template-columns:320px 320px 320px;
+    width:960px;
+    
+}
+${({theme}) => theme.media.desktop} {
+    grid-template-columns:320px 320px 320px 320px;
+    width:1280px;
+    margin:200px auto 450px auto;
+}
 `;
 export default class PartGrid extends Component {
     state ={
@@ -54,3 +65,13 @@ export default class PartGrid extends Component {
     )
   }
 }
+//  max-width:1300px;
+// height: 100%;
+//  background-color: ${({theme}) => theme.colors.lightOne};  
+// color: ${({theme}) => theme.colors.dark};
+// display: grid;
+// margin:200px auto;
+// grid-gap:5px;
+// grid-template-columns: ${(props) => props.column ? 'repeat(auto-fit, minmax(320px, 1fr))' :' repeat(auto-fit, minmax(420px,1fr))' }; 
+// grid-template-rows:auto;
+// justify-items: center;
