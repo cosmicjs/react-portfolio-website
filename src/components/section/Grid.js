@@ -8,7 +8,7 @@ import Anchor from './../parts/Anchor';
 const GridContainer = styled.div`
 max-width:1300px;
 height: 100%;
-// background-color: ${({theme}) => theme.colors.lightOne};  
+ background-color: ${({theme}) => theme.colors.lightOne};  
 color: ${({theme}) => theme.colors.dark};
 display: grid;
 margin:200px auto;

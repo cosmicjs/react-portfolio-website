@@ -12,6 +12,7 @@ import Grid from './components/section/Grid';
 import Wrap from './components/section/Wrap';
 
 import Category from './components/section/Category';
+import PartGrid from './components/section/PartGrid';
 
 
 
@@ -28,20 +29,30 @@ class App extends Component {
     const bucket = api.bucket({
     slug: 'ec055990-f24c-11e8-9231-9b47e8f95b7e'
     })
-    const data = await bucket.getObjects();
-    const cat = data.objects.filter((item) => {
-      return(
-        item.type_slug === "categories"
-      )
-    });
-    const img = data.objects.filter((item) => {
-      return(
-        item.type_slug === "images"
-      )
-    });
+    const data = await bucket.getObjects({
+      type: 'categories'
+    })
+
+
+
+   // const data = await bucket.getObjects();
+    
+    // const cat = data.objects.filter((item) => {
+    //   return(
+    //     item.type_slug === "categories"
+    //   )
+    // });
+    // const img = data.objects.filter((item) => {
+    //   return(
+    //     item.type_slug === "images"
+    //   )
+    // });
+    // this.setState({
+    //   images:img,
+    //   category: cat
+    // })
     this.setState({
-      images:img,
-      category: cat
+      category: data.objects
     })
     document.addEventListener('scroll', () => {
       if(window.pageYOffset > 50 ) {
@@ -72,12 +83,9 @@ class App extends Component {
       <Wrap hg={this.state.hg} />
      <BrowserRouter>
       <Switch>
-        <Route path="/" exact
-         render={(props) => <Category category={this.state.category}/>}
-        />
-        <Route path="/grid"
-         render={(props) => <Grid {...props} images={this.state.images}/>} 
-         />
+        <Route path="/" exact render={(props) => <Category category={this.state.category}/>}/>
+        <Route path="/grid" exact render={(props) => <Grid {...props} images={this.state.images}/>} />
+        <Route path='/grid/:slug' component={PartGrid} />
       </Switch>
      </BrowserRouter>
     </Layout>
