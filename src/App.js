@@ -8,6 +8,9 @@ import Layout from './layout/Layout';
 import Wrap from './components/section/Wrap';
 import Category from './components/section/Category';
 import PartGrid from './components/section/PartGrid';
+import About from './components/page/About';
+import Help from './components/page/Help';
+import Contact from './components/page/Contact';
 
 class App extends Component {
   state = {
@@ -36,7 +39,6 @@ class App extends Component {
           this.setState({
             hg: false
           })
-          
         }
     });  
 }
@@ -51,7 +53,11 @@ class App extends Component {
      <BrowserRouter>
       <Switch>
         <Route path="/" exact render={(props) => <Category category={this.state.category}/>}/>
-        <Route path='/:slug' component={PartGrid} />
+        <Route path='/about' exact component={About}  />
+        <Route path='/help' exact component={Help}  />
+        <Route path='/contact' exact component={Contact}  />
+        <Route path='/:slug' component={PartGrid} exact  />
+        
       </Switch>
      </BrowserRouter>
     </Layout>
