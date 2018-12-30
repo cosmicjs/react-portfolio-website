@@ -3,16 +3,15 @@ import styled from 'styled-components';
 const CategoryCard = styled.div`
   display:grid;
   width:100%;
-  padding:10px;
-  box-sizing:border-box;
-  grid-template-columns: minmax(320px, 600px);
+  padding:10px 0;
+  grid-template-columns: minmax(320px, 640px);
   img{
     width:100%;
     height:auto;
   }
 
   ${({theme}) => theme.media.mobile} {
-    grid-template-columns:${(props) => props.index % 2 === 0 ? '450px 150px' : '150px 450px'};
+    grid-template-columns:${(props) => props.index % 2 === 0 ? '390px 250px' : '250px 390px'};
   font-size:0.7em;
   grid-template-rows:350px;
   img{
@@ -24,7 +23,7 @@ const CategoryCard = styled.div`
   }
  }
  ${({theme}) => theme.media.tablet} {
-  grid-template-columns:${(props) => props.index % 2 === 0 ? '550px 250px' : '250px 550px'};
+  grid-template-columns:${(props) => props.index % 2 === 0 ? '550px 350px' : '350px 550px'};
   font-size:0.8em;
   grid-template-rows:400px;
   img{
@@ -41,7 +40,7 @@ const CategoryCard = styled.div`
   grid-template-columns:${(props) => props.index % 2 === 0 ? '850px 450px' : '450px 850px'};
    grid-template-rows:600px;
   width:100%;
-  padding:10px 0;
+  
    img{
      height:600px; 
    }

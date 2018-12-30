@@ -11,6 +11,8 @@ import PartGrid from './components/section/PartGrid';
 import About from './components/page/About';
 import Help from './components/page/Help';
 import Contact from './components/page/Contact';
+import Single from './components/section/Single';
+import Footer from './components/section/Footer';
 
 class App extends Component {
   state = {
@@ -56,10 +58,11 @@ class App extends Component {
         <Route path='/about' exact component={About}  />
         <Route path='/help' exact component={Help}  />
         <Route path='/contact' exact component={Contact}  />
+        <Route path='/img/:slug' component={Single} exact  />
         <Route path='/:slug' component={PartGrid} exact  />
-        
       </Switch>
      </BrowserRouter>
+     <Footer/>
     </Layout>
      </div>
     );
