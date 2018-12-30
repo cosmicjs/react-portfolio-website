@@ -9,8 +9,12 @@ const ContainerCategory = styled.div`
     max-width:1300px;
     height:100%;
     margin:150px auto;    
+  
+      
+   }
 `;
 const Position = styled.div`
+
        background:${({theme}) => theme.colors.light};
       //  transform: ${(props) => props.index % 2 === 0 ? 'translateX(-100px)' : 'translateX(100px)'}; 
         height:450px;
