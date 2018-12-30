@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const ContainerCategory = styled.div`
   height:100%;
   max-width:640px; 
-  margin:150px auto; 
+  margin:250px auto; 
   box-sizing:border-box;
   ${({theme}) => theme.media.mobile} {
      

@@ -9,10 +9,7 @@ import H1 from '../headers/H1';
 import ContainerCategory from './../parts/Contain';
 import Position from './../parts/PositionContainer';
 import { Link } from 'react-router-dom';
-
-const Par = styled.p`
-    
-`;
+import Par from './../parts/Paragraph';
 
 
 export default class Single extends Component {
@@ -38,14 +35,13 @@ export default class Single extends Component {
 
   render() {
     return (
-  
     <ContainerCategory>
     <CategoryCard index={0}>
     {this.state.img && <img src={this.state.img.metadata.img.url} alt="img" index={0} /> }
         <CaptionWrap index={0}>   
          <Position index={0}>
          {this.state.img &&  <H1 isBig>{this.state.img.title}</H1>}
-         {this.state.img &&  <Par>{this.state.img.content}</Par>}
+         {this.state.img &&  <Par  dangerouslySetInnerHTML={{__html:this.state.img.content}}></Par>}
          </Position>
         </CaptionWrap>
       </CategoryCard>

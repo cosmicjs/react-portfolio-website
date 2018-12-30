@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 const FootWrap = styled.div`
     width:100%;
-    height:300px;
+    height:450px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -21,8 +21,6 @@ const FootWrap = styled.div`
     }
 
 `;
-
-
 
 export default function Footer() {
   return (
