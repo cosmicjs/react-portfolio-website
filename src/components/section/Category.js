@@ -6,35 +6,59 @@ import Button from './../buttons/Button';
 import H1 from '../headers/H1';
 import { Link } from 'react-router-dom'
 const ContainerCategory = styled.div`
-    max-width:1300px;
-    height:100%;
-    margin:150px auto;    
-  
-      
-   }
+  height:100%;
+  margin:150px auto; 
+
+
+  ${({theme}) => theme.media.mobile} {
+     
+  max-width:600px;   
+ }
+ ${({theme}) => theme.media.tablet} {
+  max-width:800px;   
+ }
+ ${({theme}) => theme.media.desktop} {
+  max-width:1300px;
+ } 
 `;
 const Position = styled.div`
-
-       background:${({theme}) => theme.colors.light};
-      //  transform: ${(props) => props.index % 2 === 0 ? 'translateX(-100px)' : 'translateX(100px)'}; 
+      background:${({theme}) => theme.colors.light};
+      box-sizing:border-box;
+      padding:0 50px;
+     
+       
+        ${({theme}) => theme.media.mobile} {
+          height:250px;
+          width:400px;
+          position:relative;
+          box-shadow: ${(props) => props.index % 2 === 0 ? ' -9px 11px 14px 0 rgba(0, 0, 0, .15)' : ' 11px 11px 14px 0 rgba(0, 0, 0, .15)'}; 
+          left:${(props) => props.index % 2 === 0 ? '-100px' : '100px'};
+          :before{
+            right:${(props) => props.index % 2 === 0 ? '0' : '200px'};
+            content:'';
+            height:100px;
+            position:absolute;
+            width:100px;
+            top:0;
+            border-right:${(props) => props.index % 2 === 0 ? '1px solid black;' : 'none'}; 
+            border-left:${(props) => props.index % 2 !== 0 ? '1px solid black;' : 'none'}; 
+            border-top:1px solid black; 
+          }   
+       
+       }
+       ${({theme}) => theme.media.tablet} {
+        height:300px;
+          :before{
+            right:${(props) => props.index % 2 === 0 ? '0' : '200px'}; 
+          }   
+       }
+       ${({theme}) => theme.media.desktop} {
         height:450px;
-        left:${(props) => props.index % 2 === 0 ? '-100px' : '100px'};
-        width:500px;
-        box-sizing:border-box;
-        padding:0 50px;
-        position:relative;
-        box-shadow: ${(props) => props.index % 2 === 0 ? ' -9px 11px 14px 0 rgba(0, 0, 0, .15)' : ' 11px 11px 14px 0 rgba(0, 0, 0, .15)'}; 
-        ::before{
-          content:'';
-          height:100px;
-          position:absolute;
-          width:100px;
-          top:0;
-          right:${(props) => props.index % 2 === 0 ? '0' : '350px'}; 
-          border-right:${(props) => props.index % 2 === 0 ? '1px solid black;' : 'none'}; 
-          border-left:${(props) => props.index % 2 !== 0 ? '1px solid black;' : 'none'}; 
-          border-top:1px solid black;
-        }  
+        width:550px;
+          ::before{
+            right:${(props) => props.index % 2 === 0 ? '0' : '350px'}; 
+          } 
+       } 
 `;
 
 export default function Category(props) {
