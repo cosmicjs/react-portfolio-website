@@ -9,7 +9,6 @@ import Position from './../parts/PositionContainer';
 import { Link } from 'react-router-dom';
 import Par from './../parts/Paragraph';
 
-
 export default class Single extends Component {
     state ={
         img: null
@@ -20,7 +19,7 @@ export default class Single extends Component {
         const Cosmic = require('cosmicjs')
         const api = Cosmic()
         const bucket = api.bucket({
-        slug: 'ec055990-f24c-11e8-9231-9b47e8f95b7e'
+        slug: 'imageapp'
         })
         const data = await bucket.getObject({
         slug: `${link}`
@@ -30,7 +29,6 @@ export default class Single extends Component {
         })
     }
  
-
   render() {
     return (
     <ContainerCategory>
