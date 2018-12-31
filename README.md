@@ -17,7 +17,9 @@ Portfolio was created to expirement with and demonstrate the Cosmic JS multiple 
 
 ### Getting Started / Download
 git clone https://github.com/3ndrius/portfolio.git
+
 cd portfolio
+
 npm install
 ## Run
 npm start
