@@ -47,6 +47,7 @@ class App extends Component {
     this.setState((prevProps) => ({visable: !prevProps.visable }));
   }    
   render() {
+    console.log(this.state.category);
     return (
     <div className="App">
     <Layout>
