@@ -14,7 +14,6 @@ const Wraps = styled.div`
   left:0;
   z-index:1000;
   box-sizing:border-box;
-  //background:${({theme}) => theme.colors.light} 
   background: linear-gradient(to bottom, #ffffff 50%, rgba(255, 255, 255, 0.8) 100%);
   span{
     display:flex;

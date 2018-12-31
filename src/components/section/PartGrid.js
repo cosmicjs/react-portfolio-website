@@ -40,7 +40,7 @@ export default class PartGrid extends Component {
         const Cosmic = require('cosmicjs')
         const api = Cosmic()
         const bucket = api.bucket({
-        slug: 'ec055990-f24c-11e8-9231-9b47e8f95b7e'
+        slug: 'imageapp'
         })
         const data = await bucket.getObject({
         slug: `${slug}`
