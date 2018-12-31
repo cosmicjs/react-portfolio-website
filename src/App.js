@@ -1,42 +1,70 @@
 //PACKAGE IMPORT
 import React, { Component } from 'react';
-import styled from 'styled-components'
+import {BrowserRouter, Switch, Route} from 'react-router-dom';
 
-//CSS IMPORTS
+//CSS COMPONENT IMPORTS
 import './font-awesome-4.7.0/css/font-awesome.min.css';
 import Layout from './layout/Layout';
-import Button from './components/buttons/Button';
-import Grid from './components/section/Grid';
-// COMPONENT IMPORTS
-
-
-const H1 = styled.h1 `
-  color:red;
-  font-size: ${(props) => props.isBig ? '5em' : '1em'}; 
-  margin: 0 auto;
-`;
-const Wrap = styled.div`
-  max-width:1280px;
-  height:300px;
-  background:green;
-  margin:0 auto;
-`;
-
+import Wrap from './components/section/Wrap';
+import Category from './components/section/Category';
+import PartGrid from './components/section/PartGrid';
+import Contact from './components/page/Contact';
+import Single from './components/section/Single';
+import Footer from './components/section/Footer';
+import Center from './components/parts/Center';
 
 class App extends Component {
-
-
+  state = {
+    category:null,
+    hg:false
+  }
+  componentDidMount = async () => {
+    const Cosmic = require('cosmicjs');
+    const api = Cosmic();
+    const bucket = api.bucket({
+    slug: 'ec055990-f24c-11e8-9231-9b47e8f95b7e'
+    })
+    const data = await bucket.getObjects({
+      type: 'categories'
+    })
+    this.setState({
+      category: data.objects,
+    })
+    document.addEventListener('scroll', () => {
+      if(window.pageYOffset > 50 ) {
+        this.setState({
+          hg: true
+        })
+        }
+        else{
+          this.setState({
+            hg: false
+          })
+        }
+    });  
+}
+  handleMenu = () => {
+    this.setState((prevProps) => ({visable: !prevProps.visable }));
+  }    
   render() {
+    console.log(this.state.category);
     return (
     <div className="App">
     <Layout>
-      <Wrap>
-      <H1 isBig={true}>Hello</H1>
-      <Button>Hello</Button>
-      </Wrap>
-      <Grid/>
+    <BrowserRouter>
+    <>
+      <Wrap hg={this.state.hg} />
+      <Switch>
+        <Route path="/" exact render={(props) => <Category category={this.state.category}/>}/>  
+        <Route path='/contact' exact component={Contact}  />
+        <Route path='/img/:slug' component={Single} exact  />
+        <Route path='/:slug' component={PartGrid} exact  />
+      </Switch>
+      </>
+     </BrowserRouter>
+     <Center fs> " A portfolio is a set of pictures by someone, or photographs of examples of their work, which they use when entering competitions or applying for work. "</Center>
+     <Footer/>
     </Layout>
-     
      </div>
     );
   }
