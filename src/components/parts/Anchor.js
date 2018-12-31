@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-
-const Anchor = styled.a`
+const Anchor = styled.span`
     position:absolute;
     top:0;
     left:0;

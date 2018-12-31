@@ -44,7 +44,7 @@ export default class Single extends Component {
         </CaptionWrap>
       </CategoryCard>
       <br/> <br/>
-      <Link as={Link} to={'/'}><Button >Go back</Button></Link>
+      <Link to={'/'}><Button >Go back</Button></Link>
     </ContainerCategory>
     )
   }
