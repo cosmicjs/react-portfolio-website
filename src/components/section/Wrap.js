@@ -4,6 +4,7 @@ import React from 'react'
 import Nav from './Nav';
 
 
+
 const Wraps = styled.div`
   width:100%;
   height:100vh;
@@ -22,6 +23,10 @@ const Wraps = styled.div`
     align-items:center;
     padding:0 30px ;
     box-sizing:inherit;
+  }
+  a{
+    color:${({theme}) => theme.colors.dark} ;
+    text-decoration:none;
   }
   i{
     display:flex
@@ -48,7 +53,7 @@ export default function Wrap(props) {
   return (
    <Wraps hg={props.hg}>
     <span>
-      <H2>JohnDoe</H2>
+      <a href="/"><H2>JohnDoe</H2></a>
       <Nav  />
       </span>
     <Name hg={props.hg} src="/logo.svg" alt="img"/> 

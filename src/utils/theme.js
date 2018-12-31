@@ -10,7 +10,7 @@ export const theme = {
     media: {
         desktop: '@media(min-width: 1324px)',
         tablet: '@media(min-width: 1024px)',
-        mobile: '@media(min-width: 640px)',
+        mobile: '@media(min-width: 665px)',
 
     }
 

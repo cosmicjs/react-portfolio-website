@@ -14,5 +14,6 @@ const Anchor = styled.a`
     border-radius:50%;
     align-items:center;
     transition:all .8s ease;
+    text-decoration:none;
 `;
 export default Anchor;
