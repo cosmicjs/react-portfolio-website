@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import posed from 'react-pose';
+import { Link } from 'react-router-dom';
 
 const Menu = styled.div`
     position:relative;
@@ -106,10 +107,8 @@ class Nav extends Component {
         <Menu onClick={this.handleMenu}>
         <Overlay pose={this.state.visable ? 'true': 'false'}>
             <ListMenu  pose={this.state.visable ? 'true': 'false'}>
-                <li>Home</li>
-                <li>Help</li>
-                <li>Portfolio</li>
-                <li>Contact</li>
+                <Link to={'/'} ><li>Home</li></Link>
+                <Link to={'/contact'}><li>Contact</li></Link>
             </ListMenu>
         </Overlay>
         <Bar1 val={this.state.visable}></Bar1>

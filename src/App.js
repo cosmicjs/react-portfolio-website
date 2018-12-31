@@ -8,9 +8,10 @@ import Layout from './layout/Layout';
 import Wrap from './components/section/Wrap';
 import Category from './components/section/Category';
 import PartGrid from './components/section/PartGrid';
-import About from './components/page/About';
-import Help from './components/page/Help';
 import Contact from './components/page/Contact';
+import Single from './components/section/Single';
+import Footer from './components/section/Footer';
+import Center from './components/parts/Center';
 
 class App extends Component {
   state = {
@@ -49,17 +50,19 @@ class App extends Component {
     return (
     <div className="App">
     <Layout>
+    <BrowserRouter>
+    <>
       <Wrap hg={this.state.hg} />
-     <BrowserRouter>
       <Switch>
-        <Route path="/" exact render={(props) => <Category category={this.state.category}/>}/>
-        <Route path='/about' exact component={About}  />
-        <Route path='/help' exact component={Help}  />
+        <Route path="/" exact render={(props) => <Category category={this.state.category}/>}/>  
         <Route path='/contact' exact component={Contact}  />
+        <Route path='/img/:slug' component={Single} exact  />
         <Route path='/:slug' component={PartGrid} exact  />
-        
       </Switch>
+      </>
      </BrowserRouter>
+     <Center fs> " A portfolio is a set of pictures by someone, or photographs of examples of their work, which they use when entering competitions or applying for work. "</Center>
+     <Footer/>
     </Layout>
      </div>
     );
