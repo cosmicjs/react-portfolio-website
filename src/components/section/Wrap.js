@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import H2 from '../headers/H2';
 import React from 'react'
 import Nav from './Nav';
-import { Link } from 'react-router-dom';
+
 
 
 const Wraps = styled.div`

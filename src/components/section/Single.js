@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import  styled  from 'styled-components';
-// import H1 from './../headers/H1';
 
 import CategoryCard from './../parts/CategoryCard';
 import CaptionWrap from '../parts/Caption';

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const CategoryCard = styled.div`
+const CategoryCard = styled.div `
   display:grid;
   width:100%;
   padding:10px 0;
