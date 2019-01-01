@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Position = styled.div`
 background:${({theme}) => theme.colors.light};
 box-sizing:border-box;
-padding:0 50px;
+padding:0 20px;
 
  
   ${({theme}) => theme.media.mobile} {
@@ -27,6 +27,7 @@ padding:0 50px;
  }
  ${({theme}) => theme.media.tablet} {
   height:300px;
+  padding:0 40px;
   width:500px;
     :before{
       right:${(props) => props.index % 2 === 0 ? '0' : '250px'}; 
@@ -35,6 +36,10 @@ padding:0 50px;
  ${({theme}) => theme.media.desktop} {
   height:450px;
   width:550px;
+  padding:0 50px;
+  h1{
+    margin-bottom:60px;
+  }
     ::before{
       right:${(props) => props.index % 2 === 0 ? '0' : '350px'}; 
     } 
