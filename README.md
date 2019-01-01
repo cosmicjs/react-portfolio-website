@@ -16,21 +16,35 @@ Portfolio was created to expirement and demonstrate the Cosmic JS multiple optio
 <hr/>
 
 ### Getting Started / Download
+
+```
 git clone https://github.com/3ndrius/portfolio.git
-
 cd portfolio
-
 npm install
+```
+
 ## Run
+
+```
 npm start
+```
 
 ### Develop
-Add required development config files from your Cosmic JS account.
-After install app, add your own bucket slug to app in App,PartGrid,Single,Contact.
+
+```
+After install app, add your own bucket slug to app in
+- App
+- PartGrid
+- Single
+- Contact
+
+```
 
 ### Run in build react mode
-npm run build
 
+```
+npm run build
+```
 
 # [DEMO](https://portfolio-cosmic.netlify.com/)
 ![Desktop](https://github.com/3ndrius/portfolio/blob/master/public/5.jpg?raw=true)
