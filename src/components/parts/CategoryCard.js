@@ -8,6 +8,8 @@ const CategoryCard = styled.div `
   img{
     width:100%;
     height:auto;
+    object-fit: cover;
+
   }
 
   ${({theme}) => theme.media.mobile} {
@@ -15,6 +17,7 @@ const CategoryCard = styled.div `
   font-size:0.6em;
   grid-template-rows:300px;
   img{
+  
     height:300px;
     width:100%;
     background:yellow;
@@ -27,6 +30,7 @@ const CategoryCard = styled.div `
   font-size:0.8em;
   grid-template-rows:400px;
   img{
+  
     height:400px;
     width:100%;
     background:yellow;
@@ -43,6 +47,7 @@ const CategoryCard = styled.div `
   
    img{
      height:600px; 
+     
    }
  }
   

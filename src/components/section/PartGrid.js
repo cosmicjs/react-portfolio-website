@@ -55,7 +55,7 @@ export default class PartGrid extends Component {
         { this.state.picture.metadata && this.state.picture.metadata.images.map((item, index) => {
         return(
           <Card key={index}>
-            <Img src={item.metadata.img.url} alt=""/>
+            <Img src={item.metadata.img.url} alt="grid-img"/>
             <Anchor as={Link} to={'/img/' + item.slug}>
             <i className="fa fa-link" aria-hidden="true"></i>
             </Anchor>
