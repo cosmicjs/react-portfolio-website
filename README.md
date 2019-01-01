@@ -26,9 +26,9 @@ npm start
 
 ### Develop
 Add required development config files from your Cosmic JS account.
-After install app add your own bucket slug to app.
+After install app, add your own bucket slug to app in App,PartGrid,Single,Contact.
 
-### Run in build reat mode
+### Run in build react mode
 npm run build
 
 
