@@ -28,7 +28,8 @@ export default class Contact extends Component {
     const Cosmic = require('cosmicjs')
     const api = Cosmic()
     const bucket = api.bucket({
-    slug: 'imageapp'
+     slug: process.env.REACT_APP_COSMIC_BUCKET || 'imageapp',
+     read_key: process.env.REACT_APP_COSMIC_READ_KEY || ''
     })
     const data = await bucket.getObject({
     slug: 'contact'
