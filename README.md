@@ -1,4 +1,4 @@
-# Portfolio with Cosmic JS
+# React Portfolio Website
 
 ![Full](https://github.com/3ndrius/portfolio/blob/master/public/4.jpg?raw=true)
 
