@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-
 import Card from '../parts/Card';
 import Img from '../parts/Figure';
 import Anchor from './../parts/Anchor';
 import { Link } from 'react-router-dom';
-
-
 const GridContainer = styled.div`
     min-height:100%;
     display:grid;
@@ -21,8 +18,7 @@ ${({theme}) => theme.media.mobile} {
 }
 ${({theme}) => theme.media.tablet} {
     grid-template-columns:320px 320px 320px;
-    width:960px;
-    
+    width:960px;   
 }
 ${({theme}) => theme.media.desktop} {
     grid-template-columns:320px 320px 320px 320px;
@@ -40,7 +36,8 @@ export default class PartGrid extends Component {
         const Cosmic = require('cosmicjs')
         const api = Cosmic()
         const bucket = api.bucket({
-        slug: 'imageapp'
+         slug: process.env.REACT_APP_COSMIC_BUCKET || 'imageapp',
+         read_key: process.env.REACT_APP_COSMIC_READ_KEY || ''
         })
         const data = await bucket.getObject({
         slug: `${slug}`
