@@ -22,7 +22,7 @@ class App extends Component {
     const Cosmic = require('cosmicjs');
     const api = Cosmic();
     const bucket = api.bucket({
-     slug: process.env.REACT_APP_COSMIC_BUCKET || 'imageapp',
+     slug: process.env.REACT_APP_COSMIC_BUCKET || 'react-portfolio-website',
      read_key: process.env.REACT_APP_COSMIC_READ_KEY || ''
     })
     const data = await bucket.getObjects({
